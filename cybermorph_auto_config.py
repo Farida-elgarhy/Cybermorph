@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
-CyberMorph: Auto Configuration Generator
-FIXED: Includes proper replica configuration
+CyberMorph: Auto Configuration Generator - FIXED
 """
 
 import logging
@@ -38,7 +37,7 @@ class AutoConfigGenerator:
             },
             'replica': {
                 'type': 'docker',
-                'cloud': {
+                'cloud': {  # ← KEY FIX: 'cloud' not 'docker'
                     'provider': 'docker',
                     'docker': {
                         'network': 'cybermorph_replica',
