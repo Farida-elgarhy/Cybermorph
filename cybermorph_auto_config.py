@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 CyberMorph: Auto Configuration Generator
-Generates configuration automatically without config files
+FIXED: Includes proper replica configuration
 """
 
 import logging
@@ -38,10 +38,13 @@ class AutoConfigGenerator:
             },
             'replica': {
                 'type': 'docker',
-                'docker': {
-                    'network': 'cybermorph_replica',
-                    'subnet': '10.0.1.0/24',
-                    'image_base': 'ubuntu:22.04'
+                'cloud': {
+                    'provider': 'docker',
+                    'docker': {
+                        'network': 'cybermorph_replica',
+                        'subnet': '10.0.1.0/24',
+                        'image_base': 'ubuntu:22.04'
+                    }
                 }
             },
             'discovery': {
